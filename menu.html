@@ -171,11 +171,16 @@
     <p>Carta y sugerencias</p>
   </header>
 
-  <nav id="categories-bar">
-    <button onclick="filterCategory('entrantes')">Entrantes</button>
-    <button onclick="filterCategory('principales')">Principales</button>
-    <button onclick="filterCategory('postres')">Postres</button>
+<nav id="categories-bar">
     <button class="active" onclick="filterCategory('todos')">Todos</button>
+    <button onclick="filterCategory('tapas')">Tapas</button>
+    <button onclick="filterCategory('bocadillos')">Bocadillos</button>
+    <button onclick="filterCategory('hamburguesas')">Hamburguesas</button>
+    <button onclick="filterCategory('pizzas')">Pizzas</button>
+    <button onclick="filterCategory('ensaladas')">Ensaladas</button>
+    <button onclick="filterCategory('patatas')">Patatas</button>
+    <button onclick="filterCategory('pasta')">Pasta</button>
+    <button onclick="filterCategory('carnes y pescados')">Carnes</button>
   </nav>
 
   <main id="menu-container">
@@ -188,44 +193,119 @@
 
   <script>
     // Configura tus platos aquí
-    const menuData = [
-      {
-        id: 1,
-        categoria: "entrantes",
-        nombre: "Brava Clásica",
-        descripcion: "Patatas crujientes con alioli suave y salsa brava casera.",
-        precio: "6.50 €"
-      },
-      {
-        id: 2,
-        categoria: "entrantes",
-        nombre: "Croquetas de Jamón Ibérico",
-        descripcion: "6 unidades con bechamel cremosa, cebolla y virutas de jamón.",
-        precio: "8.00 €"
-      },
-      {
-        id: 3,
-        categoria: "principales",
-        nombre: "Arroz del Senyoret",
-        descripcion: "Arroz seco con marisco pelado, sepia y caldo de roca.",
-        precio: "14.50 €"
-      },
-      {
-        id: 4,
-        categoria: "principales",
-        nombre: "Entrecot a la Brasa",
-        descripcion: "Lomo de ternera (350g) acompañado de verduras asadas.",
-        precio: "18.00 €"
-      },
-      {
-        id: 5,
-        categoria: "postres",
-        nombre: "Tarta de Queso Fluida",
-        descripcion: "Horneada al estilo donostiarra con base de galleta.",
-        precio: "5.50 €"
-      }
-    ];
+   const menuData = [
+  // --- TAPAS ---
+  { id: 1, categoria: "tapas", nombre: "Tellinas", descripcion: "", precio: "13,90 €" },
+  { id: 2, categoria: "tapas", nombre: "Provolone con pan casero", descripcion: "", precio: "12,50 €" },
+  { id: 3, categoria: "tapas", nombre: "Calamares", descripcion: "", precio: "9,50 €" },
+  { id: 4, categoria: "tapas", nombre: "Orejas de cerdo", descripcion: "", precio: "9,50 €" },
+  { id: 5, categoria: "tapas", nombre: "Alitas con patatas", descripcion: "", precio: "7,50 €" },
+  { id: 6, categoria: "tapas", nombre: "Camembert frito con mermelada", descripcion: "", precio: "6,90 €" },
+  { id: 7, categoria: "tapas", nombre: "Pan con tomate, ajoaceite", descripcion: "", precio: "4,50 €" },
+  { id: 8, categoria: "tapas", nombre: "Pulpo a la plancha", descripcion: "", precio: "16,50 €" },
+  { id: 9, categoria: "tapas", nombre: "Nuggets con patatas", descripcion: "", precio: "6,50 €" },
+  { id: 10, categoria: "tapas", nombre: "Aros de cebolla", descripcion: "", precio: "6,50 €" },
+  { id: 11, categoria: "tapas", nombre: "Patatas bravas", descripcion: "", precio: "6,50 €" },
+  { id: 12, categoria: "tapas", nombre: "Frituras de pescado", descripcion: "", precio: "9,90 €" },
+  { id: 13, categoria: "tapas", nombre: "Puntilla", descripcion: "", precio: "9,50 €" },
+  { id: 14, categoria: "tapas", nombre: "Gambas al ajillo", descripcion: "", precio: "7,90 €" },
+  { id: 15, categoria: "tapas", nombre: "Croquetones", descripcion: "", precio: "2,00 € / ud." },
+  { id: 16, categoria: "tapas", nombre: "Mejillones tigre", descripcion: "", precio: "1,80 € / ud." },
+  { id: 17, categoria: "tapas", nombre: "Tiras pollo rebozada", descripcion: "", precio: "8,90 €" },
+  { id: 18, categoria: "tapas", nombre: "Morro", descripcion: "", precio: "7,50 €" },
+  { id: 19, categoria: "tapas", nombre: "Boquerón frito", descripcion: "", precio: "7,50 €" },
+  { id: 20, categoria: "tapas", nombre: "Rabo", descripcion: "", precio: "8,90 €" },
+  { id: 21, categoria: "tapas", nombre: "Sepia", descripcion: "", precio: "13,50 €" },
+  { id: 22, categoria: "tapas", nombre: "Mini Pincho Moruno", descripcion: "", precio: "6,90 € / 5 uds." },
+  { id: 23, categoria: "tapas", nombre: "Champiñón salteado", descripcion: "", precio: "7,90 €" },
+  { id: 24, categoria: "tapas", nombre: "Jalapeños 6 uds.", descripcion: "", precio: "7,50 €" },
+  { id: 25, categoria: "tapas", nombre: "Tequeños 6 uds.", descripcion: "", precio: "7,50 €" },
 
+  // --- ENSALADAS ---
+  { id: 26, categoria: "ensaladas", nombre: "Caprina", descripcion: "Variado de lechuga, frutos secos, queso de cabra, bacon, tomate, cebolla confitada y vinagreta.", precio: "8,90 €" },
+  { id: 27, categoria: "ensaladas", nombre: "César", descripcion: "Variado de lechuga, tomate, picatostes, pollo, parmesano y salsa césar.", precio: "8,90 €" },
+  { id: 28, categoria: "ensaladas", nombre: "Ensalada Valenciana", descripcion: "Variado de lechuga, tomate, atún, cebolla y aceitunas.", precio: "8,50 €" },
+  { id: 29, categoria: "ensaladas", nombre: "Ensalada de Frutos Secos", descripcion: "Variado de lechuga, piña, tomate, queso parmesano, frutos secos y crema de modena.", precio: "8,50 €" },
+  { id: 30, categoria: "ensaladas", nombre: "Ensalada Sapori", descripcion: "Variado de lechuga, piña, queso de cabra, tomate, cebolla confitada y frutos secos.", precio: "8,90 €" },
+  { id: 31, categoria: "ensaladas", nombre: "Ensalada de Foie", descripcion: "Variado de lechuga, tomate, foie, queso de cabra, cebolla confitada, piña y crema balsámica.", precio: "8,90 €" },
+
+  // --- PATATAS GRATINADAS ---
+  { id: 32, categoria: "patatas", nombre: "Sapori", descripcion: "Bacon con salsa blanca y queso.", precio: "8,50 €" },
+  { id: 33, categoria: "patatas", nombre: "Patatas 4 Quesos", descripcion: "Quesos especiales.", precio: "8,90 €" },
+  { id: 34, categoria: "patatas", nombre: "Patatas Carbonara", descripcion: "Salsa carbonara, bacon, nata, huevo y queso.", precio: "9,20 €" },
+  { id: 35, categoria: "patatas", nombre: "Patatas Black", descripcion: "Salsa de trufa, champiñón, bacon, queso.", precio: "9,50 €" },
+  { id: 36, categoria: "patatas", nombre: "Patatas Barbacoa", descripcion: "Carne picada, bacon, queso y salsa barbacoa.", precio: "9,20 €" },
+
+  // --- BOCADILLOS ---
+  { id: 37, categoria: "bocadillos", nombre: "Chivito", descripcion: "Lechuga, tomate, lomo, bacon, huevo frito y mayonesa.", precio: "7,20 €" },
+  { id: 38, categoria: "bocadillos", nombre: "Longaniza", descripcion: "Longaniza, bacon, pimiento verde.", precio: "6,50 €" },
+  { id: 39, categoria: "bocadillos", nombre: "Calamar", descripcion: "", precio: "6,90 €" },
+  { id: 40, categoria: "bocadillos", nombre: "Suave", descripcion: "Pollo a la plancha, mayonesa y patatas fritas.", precio: "6,50 €" },
+  { id: 41, categoria: "bocadillos", nombre: "Sobrasada", descripcion: "Sobrasada, bacon, queso y cebolla confitada.", precio: "6,50 €" },
+  { id: 42, categoria: "bocadillos", nombre: "Brascada", descripcion: "Ternera, jamón serrano y cebolla salteada.", precio: "7,50 €" },
+  { id: 43, categoria: "bocadillos", nombre: "La Terraza", descripcion: "Lomo, pimiento y queso.", precio: "6,50 €" },
+
+  // --- SANDWICH ---
+  { id: 44, categoria: "sandwich", nombre: "Mixto", descripcion: "Jamón york, queso.", precio: "4,00 €" },
+  { id: 45, categoria: "sandwich", nombre: "Vegetal", descripcion: "Mayonesa, lechuga, tomate, atún y huevo.", precio: "4,50 €" },
+  { id: 46, categoria: "sandwich", nombre: "Sandwich Chesse", descripcion: "Bacon, queso gouda, queso cheddar y huevo frito.", precio: "4,90 €" },
+
+  // --- PASTA ITALIANA ---
+  { id: 47, categoria: "pasta", nombre: "Macarrones", descripcion: "Elige tu salsa: Carbonara, Tartufata, Tomate, Boloñesa, 4 Quesos.", precio: "8,50 €" },
+  { id: 48, categoria: "pasta", nombre: "Spaguettis", descripcion: "Elige tu salsa: Carbonara, Tartufata, Tomate, Boloñesa, 4 Quesos.", precio: "8,50 €" },
+  { id: 49, categoria: "pasta", nombre: "Raviolis", descripcion: "Elige tu salsa: Carbonara, Tartufata, Tomate, Boloñesa, 4 Quesos.", precio: "9,50 €" },
+  { id: 50, categoria: "pasta", nombre: "Tortellini", descripcion: "Elige tu salsa: Carbonara, Tartufata, Tomate, Boloñesa, 4 Quesos.", precio: "9,50 €" },
+
+  // --- HAMBURGUESAS ---
+  { id: 51, categoria: "hamburguesas", nombre: "Normal", descripcion: "Carne de ternera, lechuga, tomate, cebolla confitada, queso, patatas.", precio: "7,60 €" },
+  { id: 52, categoria: "hamburguesas", nombre: "Black Angus", descripcion: "Carne angus, lechuga, tomate, cebolla confitada, queso, bacon y huevo con patatas.", precio: "12,50 €" },
+  { id: 53, categoria: "hamburguesas", nombre: "Barbique", descripcion: "Carne de ternera, lechuga, bacon, salsa barbacoa, queso y cebolla confitada con patatas.", precio: "8,50 €" },
+  { id: 54, categoria: "hamburguesas", nombre: "Hamburguesa de Pollo", descripcion: "Lechuga, tomate, cebolla confitada y queso con patatas.", precio: "7,90 €" },
+  { id: 55, categoria: "hamburguesas", nombre: "Doble", descripcion: "Doble de carne, bacon, queso y huevo frito con patatas.", precio: "9,90 €" },
+  { id: 56, categoria: "hamburguesas", nombre: "Cheese Burguer", descripcion: "Carne de ternera, queso gouda, queso cabra, queso cheddar, cebolla confitada, huevo con patatas.", precio: "9,90 €" },
+  { id: 57, categoria: "hamburguesas", nombre: "Hamburguesa Completa", descripcion: "Carne de ternera, queso, bacon, tomate, lechuga, huevo y cebolla confitada con patatas.", precio: "10,50 €" },
+  { id: 58, categoria: "hamburguesas", nombre: "Foie", descripcion: "Carne de ternera, queso de cabra, cebolla confitada, foie, huevo y crema balsámica con patatas.", precio: "10,50 €" },
+  { id: 59, categoria: "hamburguesas", nombre: "Completa Doble", descripcion: "Doble de carne, queso, bacon, tomate, lechuga, huevo y cebolla confitada con patatas.", precio: "11,50 €" },
+  { id: 60, categoria: "hamburguesas", nombre: "Trufa Angus", descripcion: "Carne Angus, lechuga, tomate, cebolla confitada, queso, bacon y huevo con patatas, salsa trufa.", precio: "13,50 €" },
+
+  // --- CARNES Y PESCADOS ---
+  { id: 61, categoria: "carnes y pescados", nombre: "Entrecot", descripcion: "Acompañado de guarnición.", precio: "17,50 €" },
+  { id: 62, categoria: "carnes y pescados", nombre: "Pechuga a la plancha", descripcion: "Acompañada de guarnición.", precio: "9,50 €" },
+  { id: 63, categoria: "carnes y pescados", nombre: "Plato combinado lomo", descripcion: "Acompañado de guarnición.", precio: "8,90 €" },
+  { id: 64, categoria: "carnes y pescados", nombre: "Ternera filete", descripcion: "Acompañado de guarnición.", precio: "9,90 €" },
+  { id: 65, categoria: "carnes y pescados", nombre: "Sepia con verduras", descripcion: "Acompañada de guarnición.", precio: "15,50 €" },
+  { id: 66, categoria: "carnes y pescados", nombre: "Emperador plancha", descripcion: "Acompañado de guarnición.", precio: "13,50 €" },
+  { id: 67, categoria: "carnes y pescados", nombre: "Huevos rotos", descripcion: "Con jamón, huevo y patatas.", precio: "9,50 €" },
+
+  // --- PIZZAS ---
+  { id: 68, categoria: "pizzas", nombre: "Margarita", descripcion: "Tomate, mozzarella, aceite de oliva virgen extra, y orégano.", precio: "8,00 € / 9,50 €" },
+  { id: 69, categoria: "pizzas", nombre: "Prosciutto", descripcion: "Tomate, mozzarella y jamón york.", precio: "8,90 € / 10,90 €" },
+  { id: 70, categoria: "pizzas", nombre: "Bacon", descripcion: "Tomate, mozzarella y bacon.", precio: "8,90 € / 10,90 €" },
+  { id: 71, categoria: "pizzas", nombre: "Salami", descripcion: "Tomate, mozzarella y salami.", precio: "8,90 € / 10,90 €" },
+  { id: 72, categoria: "pizzas", nombre: "4 Quesos", descripcion: "Tomate, mozzarella, parmesano, queso de cabra y gorgonzola.", precio: "9,50 € / 10,90 €" },
+  { id: 73, categoria: "pizzas", nombre: "Tonno", descripcion: "Tomate, mozzarella, atún y cebolla.", precio: "9,20 € / 10,90 €" },
+  { id: 74, categoria: "pizzas", nombre: "Vegetal", descripcion: "Tomate, mozzarella, champiñón, pimientos, cebolla, aceitunas.", precio: "8,90 € / 10,90 €" },
+  { id: 75, categoria: "pizzas", nombre: "4 Estaciones", descripcion: "Tomate, mozzarella, jamón york, champiñón, salami y pimientos.", precio: "8,90 € / 11,20 €" },
+  { id: 76, categoria: "pizzas", nombre: "Peperoni", descripcion: "Tomate, mozzarella, peperoni.", precio: "8,90 € / 10,90 €" },
+  { id: 77, categoria: "pizzas", nombre: "Pizza Sapori", descripcion: "Tomate, mozzarella, berenjena frita, parmesano, balsámico y miel.", precio: "8,90 € / 11,20 €" },
+  { id: 78, categoria: "pizzas", nombre: "Hawaiana", descripcion: "Tomate, mozzarella, jamón york y piña.", precio: "8,90 € / 10,90 €" },
+  { id: 79, categoria: "pizzas", nombre: "Sorrento", descripcion: "Tomate, mozzarella, jamón york, bacon y champiñones.", precio: "9,50 € / 11,50 €" },
+  { id: 80, categoria: "pizzas", nombre: "Carbonara", descripcion: "Nata, mozzarella, bacon, cebolla, huevo y parmesano.", precio: "9,50 € / 11,50 €" },
+  { id: 81, categoria: "pizzas", nombre: "Barbacoa", descripcion: "Salsa barbacoa, jamón york, bacon, carne picada.", precio: "9,50 € / 11,50 €" },
+  { id: 82, categoria: "pizzas", nombre: "Italiana", descripcion: "Tomate, mozzarella, jamón york y champiñón.", precio: "8,90 € / 11,50 €" },
+  { id: 83, categoria: "pizzas", nombre: "Pizza Pollo", descripcion: "Tomate, mozzarella, pollo, pimientos y cebolla.", precio: "9,50 € / 11,50 €" },
+  { id: 84, categoria: "pizzas", nombre: "Di Mare", descripcion: "Tomate, mozzarella, gambas salteadas, anchoas y atún.", precio: "9,50 € / 11,50 €" },
+  { id: 85, categoria: "pizzas", nombre: "Bismark", descripcion: "Tomate, mozzarella, jamón york, huevo y orégano.", precio: "9,50 € / 11,50 €" },
+  { id: 86, categoria: "pizzas", nombre: "6 Quesos", descripcion: "Tomate, mozzarella, queso gouda, queso azul, queso parmesano, queso de cabra, emmental.", precio: "9,50 € / 11,50 €" },
+  { id: 87, categoria: "pizzas", nombre: "Di Foie", descripcion: "Tomate, mozzarella, queso de cabra, champiñón, foie, crema balsámica y rúcula.", precio: "9,50 € / 11,50 €" },
+  { id: 88, categoria: "pizzas", nombre: "Pizza Trufa", descripcion: "Salsa trufa, champiñón, queso variados y rúcula.", precio: "9,50 € / 11,50 €" },
+  { id: 89, categoria: "pizzas", nombre: "Diavolo", descripcion: "Tomate, mozzarella, pimientos, tabasco, aceitunas y chorizo picante.", precio: "8,90 € / 11,20 €" },
+  { id: 90, categoria: "pizzas", nombre: "Especial", descripcion: "Tomate, mozzarella, salami, jamón york, champiñón y huevo.", precio: "9,50 € / 11,50 €" },
+  { id: 91, categoria: "pizzas", nombre: "Calzone", descripcion: "Tomate, mozzarella, jamón york, salami, champiñón y atún.", precio: "13,50 €" },
+  { id: 92, categoria: "pizzas", nombre: "Avanti", descripcion: "Tomate, mozzarella, salsa carbonara, nueces, bacon y queso de cabra.", precio: "9,50 € / 11,50 €" },
+  { id: 93, categoria: "pizzas", nombre: "Pizza Serrano", descripcion: "Tomate, mozzarella, jamón serrano y rúcula.", precio: "8,90 € / 11,20 €" }
+];
+    
     const container = document.getElementById("menu-container");
 
     function renderMenu(filtro = "todos") {
